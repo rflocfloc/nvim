@@ -1,3 +1,19 @@
+-- ---------------------
+-- [[ Install Plugins ]]
+-- ---------------------
+
+-- For nvim 0.12
+vim.pack.add({
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter.git", version = 'main'},
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git", version = 'main' },
+  { src = "https://github.com/ibhagwan/fzf-lua.git"},
+  { src = "https://github.com/nvim-mini/mini.icons.git"},
+  { src = "https://github.com/neovim/nvim-lspconfig"},
+  -- Colorschemes
+  { src = "https://github.com/rose-pine/neovim.git", name="rose-pine"},
+  { src = "https://github.com/vague2k/vague.nvim"},
+})
+
 -- -----------------
 -- [[ Colorscheme ]]
 -- -----------------
