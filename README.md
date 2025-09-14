@@ -1,8 +1,10 @@
 # nvim
-Riccardo's nvim config. No plugins. Check `plugin` branch for version with minimal plugin setup.
+Riccardo's nvim config. Minimal plugins. Uses nvim builtin package manager (v0.12+).
 
 ## Requirements
 System packages:
-  - neovim (0.11+)
+  - neovim (0.12+)
+  - fzf
   - ripgrep (optional)
   - fd-find (optional)
+  - batcat (optional)
