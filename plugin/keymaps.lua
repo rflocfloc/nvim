@@ -13,7 +13,7 @@ map('n', 'N', 'Nzzzv', {noremap = true, silent = true,  desc = 'Prev search resu
 map('n', '<C-o>', '<C-o>zz', {noremap = true, silent = true, desc = 'Jump back, centered'})
 map('n', '<C-i>', '<C-i>zz', {noremap = true, silent = true, desc = 'Jump forward, centered'})
 
-map('n', '<leader>e', '<cmd>Explore<CR>', {desc = "Open file explorer (Netrw)"})
+map('n', '<leader>e', '<cmd>:Explore<CR>', {desc = "Open file explorer (Netrw)"})
 map("n", "<leader>h", "<cmd>vsplit term://htop<CR>" ,{ desc = "Open htop in right term"})
 
 -- [[ Old, replaced by default keymaps ]]
