@@ -19,6 +19,4 @@ map("n", "<leader>h", "<cmd>vsplit term://htop<CR>" ,{ desc = "Open htop in righ
 map({'v', 'n'}, '<leader>d', "\"_d", { noremap = true, silent = true, desc = 'Delete to blackhole' })
 map({'v', 'n'}, '<leader>p', [["_dP]], { noremap = true, silent = true, desc = 'Delete to blackhole and Paste' })
 map('x', '<leader>y', [["+y]], { noremap = true, silent = true, desc = 'Yank to system clipboard' })
-
--- ??
--- '\r' desc = 'Replace selection globally' })
+map("v", "<leader>r", [["hy:%s/<C-r>h//g<left><left>]], { desc = "Replace selection globally" })
