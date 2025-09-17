@@ -1,4 +1,5 @@
 local opt = vim.opt
+local g = vim.g
 local o = vim.o
 
 -- Basic settings
