@@ -251,7 +251,7 @@ end
 --
 function StatuslineBuild()
     local parts = {
-        '%{%v:lua.StatuslineGetMode()%}',
+        -- '%{%v:lua.StatuslineGetMode()%}',
         '%{%v:lua.StatuslineGetArglist()%}',
         '%{%v:lua.StatuslineGetFilename()%}',
         '%<', -- Truncate here if needed
@@ -292,5 +292,5 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'DirChanged' }, {
 
 -- Set up the statusline
 vim.opt.statusline = '%!v:lua.StatuslineBuild()'
-vim.opt.cmdheight = 0
-vim.opt.laststatus = 2 -- statusline always on
+-- vim.opt.cmdheight = 0
+-- vim.opt.laststatus = 2 -- statusline always on

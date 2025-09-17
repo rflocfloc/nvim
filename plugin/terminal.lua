@@ -16,11 +16,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end,
 })
 
--- Open a terminal at the bottom of the screen with a fixed height.
+-- Keymaps
 vim.keymap.set("n", "<leader>t", function()
     vim.cmd.new()
     vim.cmd.wincmd "J"
     vim.api.nvim_win_set_height(0, 12)
     vim.wo.winfixheight = true
     vim.cmd.term()
-end)
+end, { desc = "Open terminal below"})
