@@ -16,15 +16,9 @@ map('n', '<C-i>', '<C-i>zz', {noremap = true, silent = true, desc = 'Jump forwar
 map('n', '<leader>e', '<cmd>:Explore<CR>', {desc = "Open file explorer (Netrw)"})
 map("n", "<leader>h", "<cmd>vsplit term://htop<CR>" ,{ desc = "Open htop in right term"})
 
--- [[ Old, replaced by default keymaps ]]
-
--- map({'v', 'n'}, '<leader>d', "\"_d", { noremap = true, silent = true, desc = 'Delete to blackhole' })
--- map({'v', 'n'}, '<leader>p', [["_dP]], { noremap = true, silent = true, desc = 'Delete to blackhole and Paste' })
--- '\d' desc = 'Delete to blackhole' })
--- '\p' desc = 'Delete to blackhole and Paste' })
-
--- map('x', '<leader>y', [["+y]], { noremap = true, silent = true, desc = 'Yank to system clipboard' })
--- '\y' desc = 'yank to system clipboard' })
+map({'v', 'n'}, '<leader>d', "\"_d", { noremap = true, silent = true, desc = 'Delete to blackhole' })
+map({'v', 'n'}, '<leader>p', [["_dP]], { noremap = true, silent = true, desc = 'Delete to blackhole and Paste' })
+map('x', '<leader>y', [["+y]], { noremap = true, silent = true, desc = 'Yank to system clipboard' })
 
 -- ??
 -- '\r' desc = 'Replace selection globally' })

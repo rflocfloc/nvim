@@ -1,10 +1,5 @@
 local opt = vim.opt
-local g = vim.g
 local o = vim.o
-
--- Set leader
-g.mapleader = " "
-g.maplocalleader = " "
 
 -- Basic settings
 opt.number = true
