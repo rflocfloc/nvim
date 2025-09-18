@@ -1,4 +1,5 @@
 local actions = require'fzf-lua.actions'
+require("fzf-lua").register_ui_select()
 require 'fzf-lua'.setup({
     'telescope',
     defaults = {
@@ -13,11 +14,19 @@ require 'fzf-lua'.setup({
             ["alt-q"]         = actions.file_sel_to_qf,
         },
     },
+    files = {
+        cwd_prompt = false,
+        prompt = "Files> ",
+    },
+    buffers = {
+        cwd_prompt = false,
+        prompt = "Buffers> ",
+    },
 })
 
 -- -- keymaps
 local fzf = require('fzf-lua')
-vim.keymap.set('n', '<leader>ss', fzf.files, { desc = 'FzfLua: home menu' })
+vim.keymap.set('n', '<leader>ss', ":FzfLua<CR>", { desc = 'FzfLua: home menu' })
 vim.keymap.set('n', '<leader>sf', fzf.files, { desc = 'FzfLua: Search files' })
 vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'FzfLua: Live grep' })
 vim.keymap.set('n', '<leader>sb', fzf.buffers, { desc = 'FzfLua: Search buffers' })

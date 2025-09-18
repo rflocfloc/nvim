@@ -11,6 +11,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter.git", version = 'main'},
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git", version = 'main' },
   { src = "https://github.com/ibhagwan/fzf-lua.git"},
+  { src = "https://github.com/nvim-mini/mini.surround.git"},
   { src = "https://github.com/nvim-mini/mini.icons.git"},
   { src = "https://github.com/neovim/nvim-lspconfig"},
   { src = "https://github.com/mfussenegger/nvim-ansible.git"},
@@ -54,4 +55,28 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     group = augroup('RemoveWhitespaces'),
     pattern = "*",
     command = [[%s/\s\+$//e]],
+})
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+    desc = 'Remove end of file empty lines',
+    group = augroup('RemoveEndingEmptyLines'),
+    pattern = "*",
+    callback = function ()
+        local bufnr = vim.api.nvim_get_current_buf()
+        local line_count = vim.api.nvim_buf_line_count(bufnr)
+        local current_line_num = line_count
+        local line_has_content = false
+
+        while current_line_num > 1 and not line_has_content do
+
+            local line_content = vim.api.nvim_buf_get_lines(bufnr, current_line_num - 1, current_line_num, false)[1]
+
+            if line_content:match('^%s*$') then
+                vim.api.nvim_buf_set_lines(bufnr, current_line_num - 1, current_line_num, false, {})
+                current_line_num = current_line_num - 1
+            else
+                line_has_content = true
+            end
+        end
+    end
 })
